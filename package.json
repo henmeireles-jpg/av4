@@ -1,0 +1,25 @@
+{
+  "name": "gerenciador-de-tarefas",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de tarefas completo com testes Cypress",
+  "main": "backend/server.js",
+  "scripts": {
+    "start:backend": "node backend/server.js",
+    "start:frontend": "npx http-server frontend -p 8080",
+    "cypress:open": "cypress open",
+    "cypress:run:frontend": "cypress run --config-file frontend/cypress.config.js",
+    "cypress:run:backend": "cypress run --config-file backend/cypress.config.js",
+    "test:frontend": "start-server-and-test start:backend http://localhost:3000 start:frontend http://localhost:8080 cypress:run:frontend",
+    "test:backend": "start-server-and-test start:backend http://localhost:3000 cypress:run:backend"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "cypress": "^13.12.0",
+    "http-server": "^14.1.1",
+    "start-server-and-test": "^2.0.3",
+    "wait-on": "^7.2.0"
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Tarefas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Minhas Tarefas</h1>
+      <p class="subtitle">Organize sua rotina com simplicidade e elegância</p>
+    </header>
+
+    <main>
+      <div id="notification-area">
+        <div id="success-msg" class="alert success hidden"></div>
+        <div id="error-msg" class="alert error hidden"></div>
+      </div>
+
+      <section class="form-section">
+        <form id="task-form">
+          <input type="hidden" id="task-id">
+          <div class="input-group">
+            <input type="text" id="task-title" placeholder="O que você precisa fazer?" required>
+          </div>
+          <div class="input-group">
+            <textarea id="task-description" placeholder="Adicione uma descrição opcional..."></textarea>
+          </div>
+          <button type="submit" id="task-submit-btn">Adicionar Tarefa</button>
+          <button type="button" id="task-cancel-btn" class="hidden">Cancelar Edição</button>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <div class="list-header">
+          <h2>Suas Tarefas</h2>
+          <span id="task-counter" class="counter">0 tarefas</span>
+        </div>
+        <div id="task-list" class="task-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
